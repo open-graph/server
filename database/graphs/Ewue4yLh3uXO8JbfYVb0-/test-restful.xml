@@ -1,0 +1,25 @@
+<mxfile host="localhost" modified="2024-02-26T10:59:11.428Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="u9jp0h6tieloIhJIRY1j" version="@DRAWIO-VERSION@">
+  <diagram name="Page-1" id="gYfpwTqSmU9yM73FQor0">
+    <mxGraphModel dx="958" dy="826" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <MyNode ip="" port="" id="9IjAyiRLBR-uzYKVIEi7-1">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+            <mxGeometry x="220" y="220" width="410" height="400" as="geometry" />
+          </mxCell>
+        </MyNode>
+        <MyNode ip="" port="" label="Test Drawio" id="9IjAyiRLBR-uzYKVIEi7-2">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+            <mxGeometry x="290" y="250" width="250" height="60" as="geometry" />
+          </mxCell>
+        </MyNode>
+        <MyNode ip="" port="" id="9IjAyiRLBR-uzYKVIEi7-3">
+          <mxCell style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+            <mxGeometry x="329" y="360" width="170" height="220" as="geometry" />
+          </mxCell>
+        </MyNode>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

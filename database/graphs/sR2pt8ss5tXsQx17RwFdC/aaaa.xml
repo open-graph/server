@@ -1,0 +1,20 @@
+<mxfile host="localhost" modified="2024-02-26T12:43:43.895Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="2uLhfrylpO0tFweQdbDC" version="22.1.18_ce8063b87d47cd72dc6473375178698b621e8d9d">
+  <diagram name="Page-1" id="syHfariqFQP_HQE1Dn1R">
+    <mxGraphModel dx="625" dy="826" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <MyNode ip="" port="" id="LC0JZNM_L4IH8ZfuIKza-1">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+            <mxGeometry x="294" y="210" width="120" height="80" as="geometry" />
+          </mxCell>
+        </MyNode>
+        <MyNode ip="" port="" id="LC0JZNM_L4IH8ZfuIKza-2">
+          <mxCell style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+            <mxGeometry x="320" y="410" width="120" height="60" as="geometry" />
+          </mxCell>
+        </MyNode>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
