@@ -1,11 +1,19 @@
-const express = require('express');
-const fs = require('fs');
-const path = require('path');
-const bodyParser = require('body-parser');
-const nanoid = require('nanoid');
+import express from 'express';
+import fs from 'fs';
+import path from 'path';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+import { nanoid } from 'nanoid';
+import * as url from 'url';
+
+
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 const app = express();
 const port = 3006;
+
+// 允许跨域请求
+app.use(cors());
 
 // 设置存储图表的文件夹
 const databaseDir = path.join(__dirname, 'database');
@@ -53,6 +61,7 @@ function writeDatabase(data) {
  */
 app.post('/api/diagram', (req, res) => {
 	const { title, xml, thumbnail, author = 'luffyzh' } = req.body;
+	console.log(req.body);
 	const id = nanoid();
 	const folderName = id;
 	const diagramPath = path.join(graphsDir, folderName);
@@ -63,12 +72,23 @@ app.post('/api/diagram', (req, res) => {
 	}
 
 	// 保存图表文件和缩略图
-	fs.writeFileSync(path.join(diagramPath, `${title}.xml`), xml);
-	fs.writeFileSync(path.join(diagramPath, 'thumbnail.png'), thumbnail, 'base64');
+	fs.writeFileSync(path.join(diagramPath, `${title?.endsWith('.xml') ? title : title + '.xml'}`), xml);
+	// 过滤data:URL
+	const base64Data = thumbnail.replace(/^data:image\/\w+;base64,/, "");
+	// 返回一个被 string 的值初始化的新的 Buffer 实例, 原始二进制数据存储在 Buffer 类的实例中, 一个 Buffer 类似于一个整数数组，但它对应于 V8 堆内存之外的一块原始内存。
+	const imageBuffer = Buffer.from(base64Data, 'base64');
+	fs.writeFileSync(path.join(diagramPath, "thumbnail.png"), imageBuffer);
 
 	// 更新数据库
 	const diagrams = readDatabase();
-	diagrams.push({ id, title, author, timestamp });
+	diagrams.push({
+		id,
+		title,
+		thumbnail,
+		author,
+		created_at: new Date().toISOString(),
+		updated_at: new Date().toISOString(),
+	});
 	writeDatabase(diagrams);
 
 	res.status(200).json({
@@ -91,7 +111,10 @@ app.get('/api/diagram/list', (req, res) => {
 			res.status(200).json(diagrams);
 	} catch (err) {
 			console.error('Error fetching diagram list:', err);
-			res.status(500).send('Error fetching diagram list');
+			res.status(500).json({
+				code: -1,
+				message: 'Error fetching diagram list',
+			});
 	}
 });
 
@@ -132,7 +155,7 @@ app.get('/api/diagram/:id', (req, res) => {
 // 处理更新图表的 PUT 请求
 app.put('/api/diagram/:id', (req, res) => {
 	const { id } = req.params;
-	const { xml, thumbnail } = req.body; // 假设我们只更新XML内容和缩略图
+	const { title, xml, thumbnail } = req.body; // 假设我们只更新XML内容和缩略图
 	const diagramPath = path.join(graphsDir, id);
 
 	if (!fs.existsSync(diagramPath)) {
@@ -144,9 +167,17 @@ app.put('/api/diagram/:id', (req, res) => {
 
 	try {
 		// 更新图表文件和缩略图
-		fs.writeFileSync(path.join(diagramPath, 'drawio.xml'), xml);
+		fs.writeFileSync(path.join(diagramPath, `${title}.xml`), xml);
 		if (thumbnail) { // 如果提供了新的缩略图，则更新它
 			fs.writeFileSync(path.join(diagramPath, 'thumbnail.png'), thumbnail, 'base64');
+		}
+
+		// 更新数据库的标题和时间
+		const diagrams = readDatabase();
+		const diagram = diagrams.find(d => d.id === id);
+		if (diagram) {
+			diagram.title = title;
+			diagram.updated_at = new Date().toISOString();
 		}
 
 		res.status(200).json({
