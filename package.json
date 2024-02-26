@@ -8,6 +8,7 @@
     "start:be": "node index.mjs",
     "start:fe": "cd drawio && serve -p 6088",
     "start": "run-p start:*",
+    "clear-drawio": "node clear-drawio.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "zhoudeyou@cnaeit.com",
