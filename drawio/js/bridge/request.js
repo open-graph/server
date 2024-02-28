@@ -7,7 +7,7 @@ window.SERVER_URL = 'http://localhost:3006';
 
 class Request {
   constructor() {
-    this.request = window.fetch;
+    this.request = window.fetch.bind(window);
   }
 
   /**
@@ -17,7 +17,8 @@ class Request {
   getDiagramList() {
     return this.request(`${window.SERVER_URL}/api/diagram/list`, {
       method: 'GET',
-    });
+    }).then(res => res.json())
+    .then(data => data);
   }
 
   /**
@@ -25,9 +26,10 @@ class Request {
    * @param {String} id 图表id
    */
   getDiagramDetail(id) {
-    return this.request(`${window.SERVER_URL}/api/diagram/detail/${id}`, {
+    return this.request(`${window.SERVER_URL}/api/diagram/${id}`, {
       method: 'GET',
-    });
+    }).then(res => res.json())
+    .then(data => data);
   }
 
   /**
@@ -41,7 +43,9 @@ class Request {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
-    });
+    })
+    .then(res => res.json())
+    .then(data => data);
   }
 
   /**
@@ -51,7 +55,9 @@ class Request {
   deleteDiagram(id) {
     return this.request(`${window.SERVER_URL}/api/diagram/${id}`, {
       method: 'DELETE',
-    });
+    })
+    .then(res => res.json())
+    .then(data => data);
   }
 
   /**
@@ -65,7 +71,9 @@ class Request {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
-    });
+    })
+    .then(res => res.json())
+    .then(data => data);
   }
 }
 
