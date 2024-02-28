@@ -3,8 +3,7 @@
  * 比如：可以重写这里的接口去实现图表的增删改查
  */
 // 服务端接口，可以自行修改
-window.SERVER_URL = 'http://localhost:3006';
-
+window.SERVER_URL = "http://localhost:3006";
 class Request {
   constructor() {
     this.request = window.fetch.bind(window);
@@ -16,9 +15,10 @@ class Request {
    */
   getDiagramList() {
     return this.request(`${window.SERVER_URL}/api/diagram/list`, {
-      method: 'GET',
-    }).then(res => res.json())
-    .then(data => data);
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((data) => data);
   }
 
   /**
@@ -27,9 +27,10 @@ class Request {
    */
   getDiagramDetail(id) {
     return this.request(`${window.SERVER_URL}/api/diagram/${id}`, {
-      method: 'GET',
-    }).then(res => res.json())
-    .then(data => data);
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((data) => data);
   }
 
   /**
@@ -38,14 +39,14 @@ class Request {
    */
   saveDiagram(data) {
     return this.request(`${window.SERVER_URL}/api/diagram`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     })
-    .then(res => res.json())
-    .then(data => data);
+      .then((res) => res.json())
+      .then((data) => data);
   }
 
   /**
@@ -54,10 +55,10 @@ class Request {
    */
   deleteDiagram(id) {
     return this.request(`${window.SERVER_URL}/api/diagram/${id}`, {
-      method: 'DELETE',
+      method: "DELETE",
     })
-    .then(res => res.json())
-    .then(data => data);
+      .then((res) => res.json())
+      .then((data) => data);
   }
 
   /**
@@ -66,15 +67,15 @@ class Request {
    */
   updateDiagram(id, data) {
     return this.request(`${window.SERVER_URL}/api/diagram/${id}`, {
-      method: 'PUT',
+      method: "PUT",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     })
-    .then(res => res.json())
-    .then(data => data);
+      .then((res) => res.json())
+      .then((data) => data);
   }
 }
 
-window.REQUEST = new Request(); 
+window.REQUEST = new Request();
