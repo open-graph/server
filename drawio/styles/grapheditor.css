@@ -2129,3 +2129,8 @@ table.geProperties tr td {
     transform: translate(0, 0);
     z-index: 0;
 }
+
+/* app logo style */
+a#app_logo {
+	cursor: pointer !important;
+}
