@@ -66,8 +66,8 @@ function writeDatabase(data) {
  * 1 - 将图表的 XML 内容和缩略图存储在文件系统中
  * 2 - 将图表的基本信息存储在 JSON 文件中，模拟数据库
  */
-app.post("/api/diagram", (req, res) => {
-  const { title, xml, thumbnail, author = "luffyzh" } = req.body;
+app.post("/api/atchitect/topo/createTopo", (req, res) => {
+  const { title, topodata, thumbnail, author = "luffyzh" } = req.body;
   const id = nanoid();
   const folderName = id;
   const diagramPath = path.join(graphsDir, folderName);
@@ -83,7 +83,7 @@ app.post("/api/diagram", (req, res) => {
       diagramPath,
       `${title?.endsWith(".xml") ? title : title + ".xml"}`
     ),
-    xml
+    topodata
   );
   // 过滤data:URL
   const base64Data = thumbnail.replace(/^data:image\/\w+;base64,/, "");
@@ -116,7 +116,7 @@ app.post("/api/diagram", (req, res) => {
  * 此方法获取的是 database 目录下的 data.json 文件中的数据
  * 此方法模拟的后端是数据库形式的存储
  */
-app.get("/api/diagram/list", (req, res) => {
+app.get("/api/atchitect/topo/topoList", (req, res) => {
   try {
     const diagrams = readDatabase();
     // 可以根据需要添加其他逻辑，比如过滤、排序等
@@ -137,8 +137,8 @@ app.get("/api/diagram/list", (req, res) => {
  * 此方法获取的是 database 目录下的 graphs 目录中的图表文件
  * 此方法模拟的后端是文件系统形式的存储
  */
-app.get("/api/diagram/:id", (req, res) => {
-  const { id } = req.params;
+app.get("/api/atchitect/topo/topoDetail", (req, res) => {
+  const { id } = req.query;
 
   const diagramPath = path.join(graphsDir, id);
 
@@ -165,7 +165,7 @@ app.get("/api/diagram/:id", (req, res) => {
     // 以 JSON 格式返回 XML 内容和缩略图的 Base64 编码
     res.status(200).json({
       title: targetDiagram.title.replace(".xml", ""),
-      xml: xmlContent,
+      topodata: xmlContent,
       thumbnail: thumbnailContent.toString("base64"), // 编码为 Base64
     });
   } catch (err) {
@@ -175,9 +175,8 @@ app.get("/api/diagram/:id", (req, res) => {
 });
 
 // 处理更新图表的 PUT 请求
-app.put("/api/diagram/:id", (req, res) => {
-  const { id } = req.params;
-  const { title, xml, thumbnail } = req.body; // 假设我们只更新XML内容和缩略图
+app.post("/api/atchitect/topo/saveTopo", (req, res) => {
+  const { id, title, topodata, thumbnail } = req.body; // 假设我们只更新XML内容和缩略图
   const diagramPath = path.join(graphsDir, id);
 
   if (!fs.existsSync(diagramPath)) {
@@ -197,7 +196,7 @@ app.put("/api/diagram/:id", (req, res) => {
         diagramPath,
         `${title?.endsWith(".xml") ? title : title + ".xml"}`
       ),
-      xml
+      topodata
     );
     if (thumbnail) {
       // 过滤data:URL
@@ -244,8 +243,8 @@ function deleteDiagram(diagrams, id) {
 }
 
 // 处理删除图表的 DELETE 请求
-app.delete("/api/diagram/:id", (req, res) => {
-  const { id } = req.params;
+app.get("/api/atchitect/topo/delTopo", (req, res) => {
+  const { id } = req.query;
   try {
     const diagrams = readDatabase();
     deleteDiagram(diagrams, id);
