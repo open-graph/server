@@ -68,7 +68,6 @@ function writeDatabase(data) {
  */
 app.post("/api/diagram", (req, res) => {
   const { title, xml, thumbnail, author = "luffyzh" } = req.body;
-  console.log(req.body);
   const id = nanoid();
   const folderName = id;
   const diagramPath = path.join(graphsDir, folderName);

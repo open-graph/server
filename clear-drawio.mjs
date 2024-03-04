@@ -13,11 +13,26 @@ const drawioPath = path.join(__dirname, "drawio");
 const jsPath = path.join(drawioPath, "js");
 
 const keepDirs = ["bridge", "dropbox"];
-const dirs = fs.readdirSync(jsDir);
+const dirs = fs.readdirSync(jsPath);
 
 for (const dir of dirs) {
-  if (!keepDirs.includes(dir)) {
+  if (
+    !keepDirs.includes(dir) &&
+    // 必须是文件夹
+    fs.statSync(path.join(jsPath, dir)).isDirectory()
+  ) {
     const diagramPath = path.join(jsPath, dir);
     fs.rmdirSync(diagramPath, { recursive: true });
+  }
+}
+
+/**
+ * 清空 drawio 根目录下所有 .js.map 后缀的文件
+ */
+const files = fs.readdirSync(drawioPath);
+for (const file of files) {
+  if (file.endsWith(".js.map")) {
+    const filePath = path.join(drawioPath, file);
+    fs.unlinkSync(filePath);
   }
 }
