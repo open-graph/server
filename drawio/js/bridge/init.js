@@ -45,7 +45,7 @@ window.GRAPH_INIT = graphInit;
  * FIXME: 注意，自动保存只有在编辑的时候才会生效
  */
 window.autosave = {
-  enable: true,
+  enable: false,
   interval: 1000 * 60, // 1分钟自动保存一次
 };
 

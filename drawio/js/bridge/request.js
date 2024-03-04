@@ -3,8 +3,8 @@
  * 比如：可以重写这里的接口去实现图表的增删改查
  */
 // 服务端接口，可以自行修改
-// window.SERVER_URL = "http://146.56.219.142:8888";
 window.SERVER_URL = "http://127.0.0.1:3006";
+
 class Request {
   constructor() {
     this.request = window.fetch.bind(window);
