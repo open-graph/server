@@ -12,7 +12,7 @@ const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 const drawioPath = path.join(__dirname, "drawio");
 const jsPath = path.join(drawioPath, "js");
 
-const keepDirs = ["bridge", "dropbox"];
+const keepDirs = ["bridge", "dropbox", "onedrive"];
 const dirs = fs.readdirSync(jsPath);
 
 for (const dir of dirs) {
