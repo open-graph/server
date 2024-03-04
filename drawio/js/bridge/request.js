@@ -3,8 +3,8 @@
  * 比如：可以重写这里的接口去实现图表的增删改查
  */
 // 服务端接口，可以自行修改
-window.SERVER_URL = "http://146.56.219.142:8888";
-
+// window.SERVER_URL = "http://146.56.219.142:8888";
+window.SERVER_URL = "http://127.0.0.1:3006";
 class Request {
   constructor() {
     this.request = window.fetch.bind(window);
@@ -34,11 +34,11 @@ class Request {
       }
     )
       .then((res) => res.json())
-      .then((data) => data);
+      .then((data) => data?.res?.topo || {});
   }
 
   /**
-   * 保存图表
+   * 创建图表
    * @param {Object} data 图表数据
    */
   saveDiagram(data) {
@@ -50,7 +50,19 @@ class Request {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((data) => data);
+      .then((res) => {
+        Toastify({
+          text: "图表创建成功",
+          duration: 2000,
+        }).showToast();
+        // FIXME: 新建模式，如果新建成功，跳转到编辑，前提是后端返回了 id
+        res.data && setTimeout(() => {
+          const targetHref = window.location.href.includes("?")
+            ? `${window.location.href}&id=${res.data}`
+            : `${window.location.href}?id=${res.data}`;
+          window.location.href = targetHref;
+        }, 2000);
+      });
   }
 
   /**
@@ -65,14 +77,18 @@ class Request {
       }
     )
       .then((res) => res.json())
-      .then((data) => data);
+      .then((res) => {
+        console.log('图表删除成功');
+      });
   }
 
   /**
    * 修改图表数据
    * @param {String} id 图表id
+   * @param {Object} data 图表数据
+   * @param {Boolean} toast 是否显示成功失败提示，可以设置自动保存的时候不提示用户保存成功
    */
-  updateDiagram(id, data) {
+  updateDiagram(id, data, toast = true) {
     return this.request(`${window.SERVER_URL}/api/atchitect/topo/saveTopo`, {
       method: "POST",
       headers: {
@@ -84,7 +100,12 @@ class Request {
       }),
     })
       .then((res) => res.json())
-      .then((data) => data);
+      .then((res) => {
+        toast && Toastify({
+          text: "图表更新成功",
+          duration: 2000,
+        }).showToast();
+      });
   }
 }
 

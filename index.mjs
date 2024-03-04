@@ -119,6 +119,7 @@ app.post("/api/atchitect/topo/createTopo", (req, res) => {
 app.get("/api/atchitect/topo/topoList", (req, res) => {
   try {
     const diagrams = readDatabase();
+    console.log("diagrams", diagrams);
     // 可以根据需要添加其他逻辑，比如过滤、排序等
     res.status(200).json({
       msg: '查询成功',
@@ -172,7 +173,7 @@ app.get("/api/atchitect/topo/topoDetail", (req, res) => {
       msg: '查询成功',
       res: {
         topo: {
-          title: targetDiagram.title.replace(".xml", ""),
+          title: targetDiagram.title,
           topodata: xmlContent,
           thumbnail: thumbnailContent.toString("base64"), // 编码为 Base64
         }

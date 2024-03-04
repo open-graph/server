@@ -39,3 +39,28 @@ function graphInit() {
 }
 
 window.GRAPH_INIT = graphInit;
+
+/**
+ * 自动保存逻辑
+ * FIXME: 注意，自动保存只有在编辑的时候才会生效
+ */
+window.autosave = {
+  enable: true,
+  interval: 1000 * 60, // 1分钟自动保存一次
+};
+
+/**
+ * 常用变量配置
+ */
+window.CONST_MSG = {
+	'CREATE_DIAGRAM_SUCCESS': '图表创建成功',
+	'CREATE_DIAGRAM_FAIL': '图表创建失败',
+	'UPDATE_DIAGRAM_SUCCESS': '图表更新成功',
+	'UPDATE_DIAGRAM_FAIL': '图表更新失败',
+	'DELETE_DIAGRAM_SUCCESS': '图表删除成功',
+	'DELETE_DIAGRAM_FAIL': '图表删除失败',
+	'FETCH_DIAGRAM_SUCCESS': '图表获取成功',
+	'FETCH_DIAGRAM_FAIL': '图表获取失败',
+	'SAVE_DIAGRAM_SUCCESS': '图表保存成功',
+	'SAVE_DIAGRAM_FAIL': '图表保存失败',
+}
