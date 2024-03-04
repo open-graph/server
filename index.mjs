@@ -120,7 +120,12 @@ app.get("/api/atchitect/topo/topoList", (req, res) => {
   try {
     const diagrams = readDatabase();
     // 可以根据需要添加其他逻辑，比如过滤、排序等
-    res.status(200).json(diagrams);
+    res.status(200).json({
+      msg: '查询成功',
+      res: {
+        topos: diagrams,
+      }
+    });
   } catch (err) {
     console.error("Error fetching diagram list:", err);
     res.status(500).json({
@@ -164,9 +169,14 @@ app.get("/api/atchitect/topo/topoDetail", (req, res) => {
 
     // 以 JSON 格式返回 XML 内容和缩略图的 Base64 编码
     res.status(200).json({
-      title: targetDiagram.title.replace(".xml", ""),
-      topodata: xmlContent,
-      thumbnail: thumbnailContent.toString("base64"), // 编码为 Base64
+      msg: '查询成功',
+      res: {
+        topo: {
+          title: targetDiagram.title.replace(".xml", ""),
+          topodata: xmlContent,
+          thumbnail: thumbnailContent.toString("base64"), // 编码为 Base64
+        }
+      }
     });
   } catch (err) {
     console.error("Error fetching diagram:", err);
