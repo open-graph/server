@@ -71,8 +71,8 @@
      * 展示 DRAWIO 编辑器
      **/
     function showDrawIOEditor(id) {
-      const drawioEditor = document.getElementById('drawio-editor');
-      drawioEditor.src = `http://localhost:6088/webapp/?dev=1&ui=min&id=${id}`;
+      const drawioEditor = document.getElementById("drawio-editor");
+      drawioEditor.src = `http://localhost:6088/?ui=min&id=${id}`;
       setTimeout(() => {
         document.getElementById("drawio-container").style.display = "block";
       }, 200);
@@ -82,7 +82,7 @@
      **/
     function hideDrawIOEditor() {
       document.getElementById("drawio-container").style.display = "none";
-      const drawioEditor = document.getElementById('drawio-editor');
+      const drawioEditor = document.getElementById("drawio-editor");
       drawioEditor.src = null;
     }
     function deleteDiagram(id) {
@@ -143,22 +143,30 @@
     window.onload = function () {
       fetchDiagrams();
 
-      const iframeWindow = document.getElementById('drawio-editor').contentWindow;
+      const iframeWindow =
+        document.getElementById("drawio-editor").contentWindow;
 
       // 监听来自 iframe 的消息
-      window.addEventListener('message', function(event) {
-        if (event.origin !== "http://127.0.0.1:6088" || event.origin !== 'http://localhost:6088') { // 确保安全性，只接收来自指定源的消息
+      window.addEventListener("message", function (event) {
+        if (
+          event.origin !== "http://127.0.0.1:6088" &&
+          event.origin !== "http://localhost:6088"
+        ) {
+          // 确保安全性，只接收来自指定源的消息
           return;
         }
-        
-        if (event.data === 'hideDrawIOEditor') {
-          console.log('iframe 调用了隐藏');
+
+        if (event.data === "hideDrawIOEditor") {
+          console.log("iframe 调用了隐藏");
           hideDrawIOEditor();
         }
       });
 
       // 向 iframe 发送消息
-      iframeWindow.postMessage('Parent send msg to child iframe', 'http://127.0.0.1:6088');
-  };
+      iframeWindow.postMessage(
+        "Parent send msg to child iframe",
+        "http://127.0.0.1:6088"
+      );
+    };
   </script>
 </html>

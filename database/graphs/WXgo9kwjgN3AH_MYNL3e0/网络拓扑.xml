@@ -1,6 +1,6 @@
-<mxfile host="localhost" modified="2024-02-26T11:49:09.866Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="Ejn6hodE9HDYJclxNYjW" version="@DRAWIO-VERSION@">
+<mxfile host="localhost" modified="2024-03-04T14:20:44.277Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="r1sbWmH0Kyl8BIr7SUeE" version="22.1.18_ce8063b87d47cd72dc6473375178698b621e8d9d">
   <diagram name="Page-1" id="-wLSwcJGeLHT0GeuD5kz">
-    <mxGraphModel dx="684" dy="826" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1748" dy="802" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -10,7 +10,7 @@
           </mxCell>
         </MyNode>
         <MyNode ip="" port="" id="BjoYVzaXHtF2fUeFIDc7-1">
-          <mxCell style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+          <mxCell style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
             <mxGeometry x="240" y="320" width="90" height="210" as="geometry" />
           </mxCell>
         </MyNode>
