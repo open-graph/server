@@ -41,16 +41,11 @@
       </section>
       <div class="dropdown">
         <button class="dropbtn">新建图表</button>
-        <div class="dropdown-content">
-          <a href="#">创建空白图表</a>
-          <a href="#">创建拓扑图表</a>
-          <a href="#">创建流程图表</a>
-          <a href="#">创建UML图表</a>
-        </div>
+        <div id="dropdown_content" class="dropdown-content"></div>
       </div>
     </nav>
     <section class="container">
-      <div id="diagram-list" class="columns features"></div>
+      <div id="diagram_list" class="columns features"></div>
     </section>
     <footer>
       <div class="content has-text-centered">
@@ -69,10 +64,8 @@
       <iframe id="drawio-editor" src=""></iframe>
     </section>
   </body>
+  <script src="./js/template.js"></script>
   <script>
-    document.getElementById("create-btn").onclick = function () {
-      window.open("http://localhost:6088/");
-    };
     /**
      * 展示 DRAWIO 编辑器
      **/
@@ -104,11 +97,12 @@
         });
     }
     function fetchDiagrams() {
+      const diagramList = document.getElementById("diagram_list");
+      diagramList.innerHTML = "";
       fetch("http://localhost:3006/api/atchitect/topo/topoList")
         .then((response) => response.json())
         .then((res) => {
           const { res: data } = res;
-          const diagramList = document.getElementById("diagram-list");
           (data?.topos || []).forEach((item) => {
             const card = document.createElement("div");
             card.className = "column is-3";
@@ -146,7 +140,49 @@
           });
         });
     }
+    /**
+     * 根据 template 生成 dropdown
+     **/
+    function generateDropdownMenu() {
+      const dropdownContent = document.getElementById("dropdown_content");
+      DRAWIO_TEMPLATES.forEach((item) => {
+        const a = document.createElement("a");
+        a.className = "dropdown-item";
+        const img = document.createElement("img");
+        img.src = item.thumbnail;
+        img.width = 48;
+        img.height = 32;
+        a.appendChild(img);
+        const span = document.createElement("span");
+        span.innerHTML = item.title;
+        a.appendChild(span);
+        a.onclick = function () {
+          fetch(`http://localhost:3006/api/atchitect/topo/createTopo`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              title: item.title,
+              thumbnail: item.thumbnail,
+              topodata: item.xml,
+            }),
+          })
+            .then((response) => response.json())
+            .then((res) => {
+              if (res.data) {
+                alert("创建成功");
+                fetchDiagrams();
+              }
+            });
+        };
+        dropdownContent.appendChild(a);
+      });
+    }
     window.onload = function () {
+      // 生成 dropdown
+      generateDropdownMenu();
+      // 获取列表
       fetchDiagrams();
 
       const iframeWindow =
