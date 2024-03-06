@@ -2130,7 +2130,68 @@ table.geProperties tr td {
     z-index: 0;
 }
 
+/* ==========> 自定义样式 <========= */
+
 /* app logo style */
 a#app_logo {
 	cursor: pointer !important;
+}
+
+/* input readonly 样式 */
+input:read-only {
+	outline: none;
+}
+
+/* iframe 模式下的样式 */
+body.in-iframe .geMenubarContainer {
+	height: 40px !important;
+}
+
+body.in-iframe .geMenubarContainer .geMenubar {
+	height: 40px !important;
+}
+
+body.in-iframe .geToolbarContainer {
+	top: 40px !important;
+	height: 40px !important;
+}
+
+body.in-iframe .geSidebarContainer {
+	top: 81px !important;
+}
+
+body.in-iframe .geDiagramContainer {
+	inset: 81px 240px 36px 212px !important;
+}
+
+body.in-iframe .geExitBtn:hover {
+	opacity: 1;
+}
+
+
+body.in-iframe .geExitBtn a:hover {
+	color: #000 !important;
+	border: 1px solid #2c2c2c !important;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 自定义属性的样式 */
+tr.idRow .gePropRowCell {
+	background-color: #ffe58f !important;
+	color: #d48806 !important;
+}
+
+tr.idRow .gePropRowCell input {
+	background-color: #ffe58f !important;
+	color: #d48806 !important;
+}
+
+tr.customPropertyRow .gePropRowCell {
+	background-color: #b7eb8f !important;
+	color: #389e0d !important;
+}
+
+tr.customPropertyRow .gePropRowCell input {
+	background-color: #b7eb8f !important;
+	color: #389e0d !important;
 }
