@@ -28,7 +28,7 @@ function exitSystemCallback() {
   // 如果不是 iframe，这个方法啥也不做
   if (self === top) return;
   // 发送消息给父页面
-  window.parent.postMessage("hideDrawIOEditor", window.origin);
+  window.parent.postMessage("hideDrawIOEditor", "http://localhost:3006");
 }
 window.EXIT_SYSTEM_CALLBACK = exitSystemCallback;
 
