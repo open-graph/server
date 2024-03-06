@@ -71,7 +71,7 @@
      **/
     function showDrawIOEditor(id) {
       const drawioEditor = document.getElementById("drawio-editor");
-      drawioEditor.src = `http://localhost:6088/webapp/?&ui=min&id=${id}`;
+      drawioEditor.src = `http://localhost:6088/?&ui=min&id=${id}`;
       setTimeout(() => {
         document.getElementById("drawio-container").style.display = "block";
       }, 200);
