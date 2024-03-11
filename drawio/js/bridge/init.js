@@ -17,8 +17,8 @@ window.LOGO_CLICK = logoClick;
 /**
  * 自定义退出 icon
  */
-window.EXIT_SYSTEM_ICON = "data:image/svg+xml;base64,PHN2ZyB0PSIxNzA5NjI4MDMyMTE0IiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjEwMjk5IiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiPjxwYXRoIGQ9Ik04MjkuNDQgODgyLjY4OGgtNjM0Ljg4Yy0yOC42NzIgMC01My4yNDgtMjQuNTc2LTUzLjI0OC01My4yNDh2LTYzNC44OGMwLTI4LjY3MiAyNC41NzYtNTMuMjQ4IDUzLjI0OC01My4yNDhoNjM0Ljg4YzI4LjY3MiAwIDUzLjI0OCAyNC41NzYgNTMuMjQ4IDUzLjI0OHYxMDcuODYxMzMzYzAgMTEuNjA1MzMzLTguODc0NjY3IDIwLjQ4LTIwLjQ4IDIwLjQ4cy0yMC40OC04Ljg3NDY2Ny0yMC40OC0yMC40OFYxOTQuNTZjMC02LjE0NC02LjE0NC0xMi4yODgtMTIuMjg4LTEyLjI4OGgtNjM0Ljg4Yy02LjE0NCAwLTEyLjI4OCA2LjE0NC0xMi4yODggMTIuMjg4djYzNC44OGMwIDYuMTQ0IDYuMTQ0IDEyLjI4OCAxMi4yODggMTIuMjg4aDYzNC44OGM2LjE0NCAwIDEyLjI4OC02LjE0NCAxMi4yODgtMTIuMjg4di0xMDcuMTc4NjY3YzAtMTEuNjA1MzMzIDguODc0NjY3LTIwLjQ4IDIwLjQ4LTIwLjQ4czIwLjQ4IDguODc0NjY3IDIwLjQ4IDIwLjQ4djEwNy4xNzg2NjdjMCAyOC42NzItMjQuNTc2IDUzLjI0OC01My4yNDggNTMuMjQ4eiIgZmlsbD0iIzAwMDAwMCIgcC1pZD0iMTAzMDAiPjwvcGF0aD48cGF0aCBkPSJNODYyLjIwOCA1MzIuNDhIMzcxLjM3MDY2N2MtMTEuNjA1MzMzIDAtMjAuNDgtOC44NzQ2NjctMjAuNDgtMjAuNDhzOC44NzQ2NjctMjAuNDggMjAuNDgtMjAuNDhoNDkwLjgzNzMzM2MxMS42MDUzMzMgMCAyMC40OCA4Ljg3NDY2NyAyMC40OCAyMC40OHMtOC44NzQ2NjcgMjAuNDgtMjAuNDggMjAuNDh6IiBmaWxsPSIjMDAwMDAwIiBwLWlkPSIxMDMwMSI+PC9wYXRoPjxwYXRoIGQ9Ik04NjIuMjA4IDUzMi40OGMtNS40NjEzMzMgMC0xMC4yNC0yLjA0OC0xNC4zMzYtNi4xNDRsLTE3MC42NjY2NjctMTcwLjY2NjY2N2MtOC4xOTItOC4xOTItOC4xOTItMjEuMTYyNjY3IDAtMjguNjcyIDguMTkyLTguMTkyIDIxLjE2MjY2Ny04LjE5MiAyOC42NzIgMGwxNzAuNjY2NjY3IDE3MC42NjY2NjdjOC4xOTIgOC4xOTIgOC4xOTIgMjEuMTYyNjY3IDAgMjguNjcyLTQuMDk2IDQuMDk2LTguODc0NjY3IDYuMTQ0LTE0LjMzNiA2LjE0NHoiIGZpbGw9IiMwMDAwMDAiIHAtaWQ9IjEwMzAyIj48L3BhdGg+PHBhdGggZD0iTTY5MS41NDEzMzMgNzAzLjE0NjY2N2MtNS40NjEzMzMgMC0xMC4yNC0yLjA0OC0xNC4zMzYtNi4xNDQtOC4xOTItOC4xOTItOC4xOTItMjEuMTYyNjY3IDAtMjguNjcybDE3MC42NjY2NjctMTcwLjY2NjY2N2M4LjE5Mi04LjE5MiAyMS4xNjI2NjctOC4xOTIgMjguNjcyIDAgOC4xOTIgOC4xOTIgOC4xOTIgMjEuMTYyNjY3IDAgMjguNjcybC0xNzAuNjY2NjY3IDE3MC42NjY2NjdjLTQuMDk2IDQuMDk2LTguODc0NjY3IDYuMTQ0LTE0LjMzNiA2LjE0NHoiIGZpbGw9IiMwMDAwMDAiIHAtaWQ9IjEwMzAzIj48L3BhdGg+PC9zdmc+";
-
+window.EXIT_SYSTEM_ICON =
+  "data:image/svg+xml;base64,PHN2ZyB0PSIxNzA5NjI4MDMyMTE0IiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjEwMjk5IiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiPjxwYXRoIGQ9Ik04MjkuNDQgODgyLjY4OGgtNjM0Ljg4Yy0yOC42NzIgMC01My4yNDgtMjQuNTc2LTUzLjI0OC01My4yNDh2LTYzNC44OGMwLTI4LjY3MiAyNC41NzYtNTMuMjQ4IDUzLjI0OC01My4yNDhoNjM0Ljg4YzI4LjY3MiAwIDUzLjI0OCAyNC41NzYgNTMuMjQ4IDUzLjI0OHYxMDcuODYxMzMzYzAgMTEuNjA1MzMzLTguODc0NjY3IDIwLjQ4LTIwLjQ4IDIwLjQ4cy0yMC40OC04Ljg3NDY2Ny0yMC40OC0yMC40OFYxOTQuNTZjMC02LjE0NC02LjE0NC0xMi4yODgtMTIuMjg4LTEyLjI4OGgtNjM0Ljg4Yy02LjE0NCAwLTEyLjI4OCA2LjE0NC0xMi4yODggMTIuMjg4djYzNC44OGMwIDYuMTQ0IDYuMTQ0IDEyLjI4OCAxMi4yODggMTIuMjg4aDYzNC44OGM2LjE0NCAwIDEyLjI4OC02LjE0NCAxMi4yODgtMTIuMjg4di0xMDcuMTc4NjY3YzAtMTEuNjA1MzMzIDguODc0NjY3LTIwLjQ4IDIwLjQ4LTIwLjQ4czIwLjQ4IDguODc0NjY3IDIwLjQ4IDIwLjQ4djEwNy4xNzg2NjdjMCAyOC42NzItMjQuNTc2IDUzLjI0OC01My4yNDggNTMuMjQ4eiIgZmlsbD0iIzAwMDAwMCIgcC1pZD0iMTAzMDAiPjwvcGF0aD48cGF0aCBkPSJNODYyLjIwOCA1MzIuNDhIMzcxLjM3MDY2N2MtMTEuNjA1MzMzIDAtMjAuNDgtOC44NzQ2NjctMjAuNDgtMjAuNDhzOC44NzQ2NjctMjAuNDggMjAuNDgtMjAuNDhoNDkwLjgzNzMzM2MxMS42MDUzMzMgMCAyMC40OCA4Ljg3NDY2NyAyMC40OCAyMC40OHMtOC44NzQ2NjcgMjAuNDgtMjAuNDggMjAuNDh6IiBmaWxsPSIjMDAwMDAwIiBwLWlkPSIxMDMwMSI+PC9wYXRoPjxwYXRoIGQ9Ik04NjIuMjA4IDUzMi40OGMtNS40NjEzMzMgMC0xMC4yNC0yLjA0OC0xNC4zMzYtNi4xNDRsLTE3MC42NjY2NjctMTcwLjY2NjY2N2MtOC4xOTItOC4xOTItOC4xOTItMjEuMTYyNjY3IDAtMjguNjcyIDguMTkyLTguMTkyIDIxLjE2MjY2Ny04LjE5MiAyOC42NzIgMGwxNzAuNjY2NjY3IDE3MC42NjY2NjdjOC4xOTIgOC4xOTIgOC4xOTIgMjEuMTYyNjY3IDAgMjguNjcyLTQuMDk2IDQuMDk2LTguODc0NjY3IDYuMTQ0LTE0LjMzNiA2LjE0NHoiIGZpbGw9IiMwMDAwMDAiIHAtaWQ9IjEwMzAyIj48L3BhdGg+PHBhdGggZD0iTTY5MS41NDEzMzMgNzAzLjE0NjY2N2MtNS40NjEzMzMgMC0xMC4yNC0yLjA0OC0xNC4zMzYtNi4xNDQtOC4xOTItOC4xOTItOC4xOTItMjEuMTYyNjY3IDAtMjguNjcybDE3MC42NjY2NjctMTcwLjY2NjY2N2M4LjE5Mi04LjE5MiAyMS4xNjI2NjctOC4xOTIgMjguNjcyIDAgOC4xOTIgOC4xOTIgOC4xOTIgMjEuMTYyNjY3IDAgMjguNjcybC0xNzAuNjY2NjY3IDE3MC42NjY2NjdjLTQuMDk2IDQuMDk2LTguODc0NjY3IDYuMTQ0LTE0LjMzNiA2LjE0NHoiIGZpbGw9IiMwMDAwMDAiIHAtaWQ9IjEwMzAzIj48L3BhdGg+PC9zdmc+";
 
 /**
  * 自定义退出系统函数
@@ -28,7 +28,7 @@ function exitSystemCallback() {
   // 如果不是 iframe，这个方法啥也不做
   if (self === top) return;
   // 发送消息给父页面
-  window.parent.postMessage("hideDrawIOEditor", "http://localhost:3006");
+  window.parent.postMessage("hideDrawIOEditor", window.origin);
 }
 window.EXIT_SYSTEM_CALLBACK = exitSystemCallback;
 
@@ -41,31 +41,39 @@ window.EXIT_SYSTEM_CALLBACK = exitSystemCallback;
  * FIXME: data:image/svg+xml;base64,PHN2ZyB0PSIxNzA5Njk1NTcw => data:image/svg+xml,PHN2ZyB0PSIxNzA5Njk1NTcw
  * FIXME: 注意，properties 所有的 key 都不能包含空格，否则会报错
  */
-window.OPEN_GRAPH_CUSTOM_SHAPES_DEFAULT_PROPERTIES = [{
-  key: '厂商',
-  value: '',
-}, {
-  key: '产品名称',
-  value: '',
-}];
+window.OPEN_GRAPH_CUSTOM_SHAPES_DEFAULT_PROPERTIES = [
+  {
+    key: "厂商",
+    value: "",
+  },
+  {
+    key: "产品名称",
+    value: "",
+  },
+];
 const OPEN_GRAPH_CUSTOM_SHAPES = [
   {
     title: "自定义网络",
-    tags: ['custom', 'network'],
-    id: 'custom-network',
-    properties: [{
-      key: '子网号',
-      value: '',
-    }, {
-      key: '子网掩码',
-      value: '',
-    }, {
-      key: 'VLAN号',
-      value: '',
-    }, {
-      key: '安全域',
-      value: '',
-    }],
+    tags: ["custom", "network"],
+    id: "custom-network",
+    properties: [
+      {
+        key: "子网号",
+        value: "",
+      },
+      {
+        key: "子网掩码",
+        value: "",
+      },
+      {
+        key: "VLAN号",
+        value: "",
+      },
+      {
+        key: "安全域",
+        value: "",
+      },
+    ],
     width: 128,
     height: 128,
     content:
@@ -73,19 +81,23 @@ const OPEN_GRAPH_CUSTOM_SHAPES = [
   },
   {
     title: "自定义服务器",
-    tags: ['custom', 'network', 'server'],
-    id: 'custom-server',
-    properties: [{
-      key: '厂商',
-      value: '',
-    }, {
-      key: '产品名称',
-      value: '',
-    }],
+    tags: ["custom", "network", "server"],
+    id: "custom-server",
+    properties: [
+      {
+        key: "厂商",
+        value: "",
+      },
+      {
+        key: "产品名称",
+        value: "",
+      },
+    ],
     width: 128,
     height: 128,
-    content: "data:image/svg+xml,PHN2ZyB0PSIxNzA5Njk1NzMxMDE1IiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDE1MDAgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjYwNjkiIGlkPSJteF9uXzE3MDk2OTU3MzEwMTYiIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4Ij48cGF0aCBkPSJNMCAzMTEuNTUydjM5My45NjYzNDVjMi41ODY0ODMgMTYxLjU0NDgyOCAzMzcuNDE2ODI4IDMxNi4zODA2OSA3NDkuOTkxNzI0IDMxNi4zODA2ODkgNDEyLjYwMTM3OSAwIDc0Ny4yNTUxNzItMTU0LjgzNTg2MiA3NTAuMDA5Mzc5LTMxNi4zODA2ODlWMzExLjU1MkgweiIgZmlsbD0iIzBEQkE5MCIgcC1pZD0iNjA3MCI+PC9wYXRoPjxwYXRoIGQ9Ik0xNTAwLjAwMTEwMyAzMTAuMzQyNjIxYzAgMTcxLjM3ODc1OS0zMzUuODYzMTcyIDMzNC40NzcyNDEtNzUwLjAwMDU1MSAzMzQuNDc3MjQxUzAgNDgxLjcyMTM3OSAwIDMxMC4zNTE0NDggMzM1Ljg2MzE3MiAwIDc0OS45OTE3MjQgMGM0MTQuMTQ2MjA3IDAgNzUwLjAwOTM3OSAxMzguNzk2MTM4IDc1MC4wMDkzNzkgMzEwLjM0MjYyMXoiIGZpbGw9IiMyMEQyQTYiIHAtaWQ9IjYwNzEiPjwvcGF0aD48cGF0aCBkPSJNNjg0LjY1ODc1OSAxNTIuOTI5MTAzaDQ5LjgyMjg5NmwwLjE3NjU1MiAxMDguOTY3NzI1aDUwLjg1NTcyNGwtMS4yMDA1NTItMTA4Ljk2NzcyNWg0OS44MjI4OTdMNzU4Ljc5MjgyOCAyMy40NDYwNjlsLTc0LjEzNDA2OSAxMjkuNDgzMDM0eiBtMTAxLjU1MjU1MSAxODIuNDEzMjQyaC01MS41NTMxMDNsMC4xNzY1NTIgMTI3LjQxNzM3OWgtNTIuNzYyNDgzbDc5LjY1MTMxIDEyOS42NTA3NTkgNzguNDUwNzU5LTEyOS42NTA3NTloLTUyLjc2MjQ4M2wtMS4yMDA1NTItMTI3LjQxNzM3OXogbTIwOS40Nzg2MjEtNjIuNTg3NTg2bC0yLjQwOTkzMS01MS43MjA4MjgtMTI0LjMxMDA2OSA3Ny41OTQ0ODMgMTMxLjcxNjQxNCA3Ny43NTMzNzktMi40MDk5MzEtNTEuNzI5NjU1aDIxNy41ODIzNDVsLTQuNDc1NTg3LTUxLjg5NzM3OWgtMjE1LjY5MzI0MXogbS00NzEuMzc1NDQ4IDBIMzA4Ljc4ODk2NmwtMy45NjM1ODcgNTEuOTA2MjA3SDUyMi40MTY1NTJsLTEuODk3OTMxIDUxLjcyMDgyNyAxMzAuODYwMTM4LTc3Ljc2MjIwNy0xMjQuOTk4NjIxLTc3LjU4NTY1NS0yLjA2NTY1NSA1MS43Mjk2NTV6IiBmaWxsPSIjRkZGRkZGIiBwLWlkPSI2MDcyIj48L3BhdGg+PC9zdmc+",
-  }
+    content:
+      "data:image/svg+xml,PHN2ZyB0PSIxNzA5Njk1NzMxMDE1IiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDE1MDAgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjYwNjkiIGlkPSJteF9uXzE3MDk2OTU3MzEwMTYiIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4Ij48cGF0aCBkPSJNMCAzMTEuNTUydjM5My45NjYzNDVjMi41ODY0ODMgMTYxLjU0NDgyOCAzMzcuNDE2ODI4IDMxNi4zODA2OSA3NDkuOTkxNzI0IDMxNi4zODA2ODkgNDEyLjYwMTM3OSAwIDc0Ny4yNTUxNzItMTU0LjgzNTg2MiA3NTAuMDA5Mzc5LTMxNi4zODA2ODlWMzExLjU1MkgweiIgZmlsbD0iIzBEQkE5MCIgcC1pZD0iNjA3MCI+PC9wYXRoPjxwYXRoIGQ9Ik0xNTAwLjAwMTEwMyAzMTAuMzQyNjIxYzAgMTcxLjM3ODc1OS0zMzUuODYzMTcyIDMzNC40NzcyNDEtNzUwLjAwMDU1MSAzMzQuNDc3MjQxUzAgNDgxLjcyMTM3OSAwIDMxMC4zNTE0NDggMzM1Ljg2MzE3MiAwIDc0OS45OTE3MjQgMGM0MTQuMTQ2MjA3IDAgNzUwLjAwOTM3OSAxMzguNzk2MTM4IDc1MC4wMDkzNzkgMzEwLjM0MjYyMXoiIGZpbGw9IiMyMEQyQTYiIHAtaWQ9IjYwNzEiPjwvcGF0aD48cGF0aCBkPSJNNjg0LjY1ODc1OSAxNTIuOTI5MTAzaDQ5LjgyMjg5NmwwLjE3NjU1MiAxMDguOTY3NzI1aDUwLjg1NTcyNGwtMS4yMDA1NTItMTA4Ljk2NzcyNWg0OS44MjI4OTdMNzU4Ljc5MjgyOCAyMy40NDYwNjlsLTc0LjEzNDA2OSAxMjkuNDgzMDM0eiBtMTAxLjU1MjU1MSAxODIuNDEzMjQyaC01MS41NTMxMDNsMC4xNzY1NTIgMTI3LjQxNzM3OWgtNTIuNzYyNDgzbDc5LjY1MTMxIDEyOS42NTA3NTkgNzguNDUwNzU5LTEyOS42NTA3NTloLTUyLjc2MjQ4M2wtMS4yMDA1NTItMTI3LjQxNzM3OXogbTIwOS40Nzg2MjEtNjIuNTg3NTg2bC0yLjQwOTkzMS01MS43MjA4MjgtMTI0LjMxMDA2OSA3Ny41OTQ0ODMgMTMxLjcxNjQxNCA3Ny43NTMzNzktMi40MDk5MzEtNTEuNzI5NjU1aDIxNy41ODIzNDVsLTQuNDc1NTg3LTUxLjg5NzM3OWgtMjE1LjY5MzI0MXogbS00NzEuMzc1NDQ4IDBIMzA4Ljc4ODk2NmwtMy45NjM1ODcgNTEuOTA2MjA3SDUyMi40MTY1NTJsLTEuODk3OTMxIDUxLjcyMDgyNyAxMzAuODYwMTM4LTc3Ljc2MjIwNy0xMjQuOTk4NjIxLTc3LjU4NTY1NS0yLjA2NTY1NSA1MS43Mjk2NTV6IiBmaWxsPSIjRkZGRkZGIiBwLWlkPSI2MDcyIj48L3BhdGg+PC9zdmc+",
+  },
 ];
 
 window.OPEN_GRAPH_CUSTOM_SHAPES = OPEN_GRAPH_CUSTOM_SHAPES;
@@ -124,4 +136,35 @@ window.CONST_MSG = {
   FETCH_DIAGRAM_FAIL: "图表获取失败",
   SAVE_DIAGRAM_SUCCESS: "图表保存成功",
   SAVE_DIAGRAM_FAIL: "图表保存失败",
+};
+
+/**
+ * SVG 外接方法
+ */
+function downloadSVG(svgData, fileName) {
+  console.log("生成的 SVG 数据：", svgData, fileName);
+  // 为 SVG 数据创建 Blob 对象
+  var blob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" });
+
+  // 创建一个指向 Blob 的 URL
+  var url = URL.createObjectURL(blob);
+
+  // 创建一个隐藏的 a 元素，设置下载属性并模拟点击
+  var downloadLink = document.createElement("a");
+  downloadLink.href = url;
+  downloadLink.download = fileName; // 设定下载文件名
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+
+  // 清理：撤销 Blob 对象的 URL 并移除 a 元素
+  URL.revokeObjectURL(url);
+  document.body.removeChild(downloadLink);
+}
+
+/**
+ * 如果不设置这个方法，那么就不会处理 SVG 数据
+ * 如果设置了这个方法，就会在保存的时候将 svg 数据赋值给 window.svgData
+ */
+window.DEAL_SVG_CALLBACK = function (svgData, filename) {
+  console.log(svgData, filename);
 };
