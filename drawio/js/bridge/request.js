@@ -56,12 +56,13 @@ class Request {
           duration: 2000,
         }).showToast();
         // FIXME: 新建模式，如果新建成功，跳转到编辑，前提是后端返回了 id
-        res.data && setTimeout(() => {
-          const targetHref = window.location.href.includes("?")
-            ? `${window.location.href}&id=${res.data}`
-            : `${window.location.href}?id=${res.data}`;
-          window.location.href = targetHref;
-        }, 2000);
+        res.data &&
+          setTimeout(() => {
+            const targetHref = window.location.href.includes("?")
+              ? `${window.location.href}&id=${res.data}`
+              : `${window.location.href}?id=${res.data}`;
+            window.location.href = targetHref;
+          }, 2000);
       });
   }
 
@@ -78,7 +79,7 @@ class Request {
     )
       .then((res) => res.json())
       .then((res) => {
-        console.log('图表删除成功');
+        console.log("图表删除成功");
       });
   }
 
@@ -96,15 +97,17 @@ class Request {
       },
       body: JSON.stringify({
         ...data,
-        id,
+        // 把 ID 变成整形
+        id: +id,
       }),
     })
       .then((res) => res.json())
       .then((res) => {
-        toast && Toastify({
-          text: "图表更新成功",
-          duration: 2000,
-        }).showToast();
+        toast &&
+          Toastify({
+            text: "图表更新成功",
+            duration: 2000,
+          }).showToast();
       });
   }
 }

@@ -1,4 +1,9 @@
 /**
+ * 默认侧边栏
+ */
+window.__DEFAULT_ENTRIES__ = "general;cisco;cisco19"; // 默认是 general;uml;er;bpmn;flowchart;basic;arrows2
+
+/**
  * 自定义系统 LOGO
  * 建议尺寸：32px * 32px
  */
@@ -28,7 +33,8 @@ function exitSystemCallback() {
   // 如果不是 iframe，这个方法啥也不做
   if (self === top) return;
   // 发送消息给父页面
-  window.parent.postMessage("hideDrawIOEditor", window.origin);
+  // TODO: 这里可以替换为 location.href = "你们想去的链接地址"
+  window.parent.postMessage("hideDrawIOEditor", "http://localhost:3006");
 }
 window.EXIT_SYSTEM_CALLBACK = exitSystemCallback;
 
@@ -136,35 +142,4 @@ window.CONST_MSG = {
   FETCH_DIAGRAM_FAIL: "图表获取失败",
   SAVE_DIAGRAM_SUCCESS: "图表保存成功",
   SAVE_DIAGRAM_FAIL: "图表保存失败",
-};
-
-/**
- * SVG 外接方法
- */
-function downloadSVG(svgData, fileName) {
-  console.log("生成的 SVG 数据：", svgData, fileName);
-  // 为 SVG 数据创建 Blob 对象
-  var blob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" });
-
-  // 创建一个指向 Blob 的 URL
-  var url = URL.createObjectURL(blob);
-
-  // 创建一个隐藏的 a 元素，设置下载属性并模拟点击
-  var downloadLink = document.createElement("a");
-  downloadLink.href = url;
-  downloadLink.download = fileName; // 设定下载文件名
-  document.body.appendChild(downloadLink);
-  downloadLink.click();
-
-  // 清理：撤销 Blob 对象的 URL 并移除 a 元素
-  URL.revokeObjectURL(url);
-  document.body.removeChild(downloadLink);
-}
-
-/**
- * 如果不设置这个方法，那么就不会处理 SVG 数据
- * 如果设置了这个方法，就会在保存的时候将 svg 数据赋值给 window.svgData
- */
-window.DEAL_SVG_CALLBACK = function (svgData, filename) {
-  console.log(svgData, filename);
 };
