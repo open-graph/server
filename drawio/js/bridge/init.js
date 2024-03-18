@@ -2,7 +2,10 @@
  * 默认侧边栏
  */
 window.__DEFAULT_ENTRIES__ = "general;cisco;cisco19"; // 默认是 general;uml;er;bpmn;flowchart;basic;arrows2
-
+/**
+ * 是否隐藏样式属性
+ */
+window.__HIDE_STYLE_PROPERTIES__ = true;
 /**
  * 自定义系统 LOGO
  * 建议尺寸：32px * 32px
